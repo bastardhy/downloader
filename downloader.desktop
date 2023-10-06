@@ -1,0 +1,19 @@
+
+[Desktop Entry]
+Type=Service
+ServiceTypes=KonqPopupMenu/Plugin
+MimeType=inode/directory;
+Icon=garuda-downloader
+X-KDE-Submenu=Downloader
+TryExec=konsole
+Actions=yt-dlmp4;yt-dlmp3
+
+[Desktop Action yt-dlmp4]
+Name=Download Video from URL
+Icon=video-mp4
+Exec=konsole -e "yt-dl -f mp4 -P '%f' '$(kdialog --inputbox "Paste URL to download Video (yt-dl)")'"; kdialog --title="Done" --passivepopup="Video has been Downloaded"
+
+[Desktop Action yt-dlmp3]
+Name=Download Audio from URL
+Icon=audio-mp3
+Exec=konsole -e "yt-dl -x --audio-format=mp3 -P '%f' '$(kdialog --inputbox "Paste URL to download Audio (yt-dl)")'"; kdialog --title="Done" --passivepopup="Audio has been Downloaded"
